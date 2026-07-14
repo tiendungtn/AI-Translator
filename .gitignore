@@ -1,0 +1,6 @@
+# Generated manifest file
+manifest.json
+
+# OS files
+.DS_Store
+Thumbs.db
