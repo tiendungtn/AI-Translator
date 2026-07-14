@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Cài đặt - AI Bilingual Translator</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <!-- Header -->
+    <header class="options-header">
+      <div class="header-logo">
+        <img src="icons/icon-48.png" alt="Logo">
+        <h1>AI Bilingual Translator Settings</h1>
+      </div>
+      <p class="header-desc">Tùy chỉnh cấu hình API dịch thuật và giao diện hiển thị song ngữ.</p>
+    </header>
+
+    <!-- Main Grid Layout -->
+    <div class="options-grid">
+      <!-- Section: API & Engine -->
+      <section class="settings-section">
+        <h2>Cấu hình Dịch thuật</h2>
+        <div class="card">
+          <div class="form-group">
+            <label for="input-api-key">Gemini API Key</label>
+            <input type="password" id="input-api-key" placeholder="Nhập khóa API Gemini của bạn...">
+            <p class="field-hint">Mẹo: Bạn có thể đăng ký khóa API miễn phí từ Google AI Studio.</p>
+          </div>
+          
+          <div class="form-group">
+            <label for="select-default-engine">Công cụ mặc định</label>
+            <select id="select-default-engine">
+              <option value="google">Google Translate (Miễn phí)</option>
+              <option value="gemini">Gemini AI</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Style customizer -->
+      <section class="settings-section">
+        <h2>Phong cách hiển thị song ngữ</h2>
+        <div class="card">
+          <div class="form-group">
+            <label for="input-text-color">Màu chữ dịch song ngữ</label>
+            <div class="color-picker-wrapper">
+              <input type="color" id="input-text-color" value="#6b7280">
+              <input type="text" id="input-text-color-hex" value="#6b7280">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="select-font-size">Cỡ chữ bản dịch</label>
+              <select id="select-font-size">
+                <option value="0.8em">Nhỏ (0.8em)</option>
+                <option value="0.9em" selected>Bình thường (0.9em)</option>
+                <option value="1.0em">Trung bình (1.0em)</option>
+                <option value="1.1em">Lớn (1.1em)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="select-line-height">Khoảng cách dòng</label>
+              <select id="select-line-height">
+                <option value="1.2">Chặt (1.2)</option>
+                <option value="1.4" selected>Bình thường (1.4)</option>
+                <option value="1.6">Thoáng (1.6)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Live Preview Card -->
+          <div class="preview-box">
+            <span class="preview-label">Bản xem trước trực quan:</span>
+            <div class="preview-content">
+              <p class="preview-orig">This is the original English sentence in the paragraph.</p>
+              <p id="preview-trans" class="preview-translated">Đây là câu dịch song ngữ mẫu dựa trên cài đặt của bạn.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Actions Panel -->
+    <div class="actions-panel">
+      <button id="btn-save" class="btn-save">Lưu Cài đặt</button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Đã lưu cài đặt thành công!</div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
