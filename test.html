@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bilingual Translation Extension Test Page</title>
+  <style>
+    body {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+    h1 {
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 10px;
+      color: #111;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #222;
+    }
+    code {
+      background: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: monospace;
+    }
+    .note {
+      background: #e0f2fe;
+      border-left: 4px solid #0284c7;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>AI Bilingual Translator - Manual Testing Page</h1>
+  
+  <p>Welcome to the testing page for our translation extension! This page is written in English to let you easily verify if your bilingual translator works correctly. You can test it by clicking the extension icon or using the floating ball in the bottom-right corner.</p>
+
+  <div class="note">
+    <strong>Quick Note:</strong> The extension will translate paragraphs, headings, and list items into your target language (e.g. Vietnamese), displaying the translated text right below the original text!
+  </div>
+
+  <h2>Section 1: General Paragraphs</h2>
+  <p>Artificial Intelligence has advanced rapidly over the past few years. Modern large language models, like Gemini, can perform translation tasks with human-like understanding, capturing nuances and idioms better than old machine translation engines.</p>
+  
+  <p>To use the Gemini API, you need to obtain an API key from Google AI Studio. Once saved in the options panel, the extension will send paragraphs in batches to translate them efficiently and display them side-by-side.</p>
+
+  <h2>Section 2: Headings and Lists</h2>
+  <p>Below is a list of features supported by this bilingual translation extension:</p>
+  <ul>
+    <li>Supports both Chrome (Chromium) and Firefox browsers out-of-the-box.</li>
+    <li>Free translation using the public Google Translate API.</li>
+    <li>AI-powered high-quality translation using the Gemini API.</li>
+    <li>Adjustable styles for translation layout, including text color, font size, and line height.</li>
+    <li>Subtle glassmorphic floating action button for quick translation actions.</li>
+  </ul>
+
+  <h2>Section 3: Content to Ignore</h2>
+  <p>The translation script should strictly ignore code blocks and code tags. For example, the following line containing code: <code>const translate = (text) => fetchAPI(text);</code> should only have its outer text translated, leaving the code itself untouched.</p>
+
+  <p>Similarly, the entire block of code inside this pre-formatted tag must NOT be translated at all:</p>
+  <pre>
+function calculateSum(a, b) {
+  // This comment should not be translated by default
+  const result = a + b;
+  return result;
+}
+  </pre>
+
+  <p>Congratulations! If the page layout remains neat and you can read both English and Vietnamese bilingually, the extension is working successfully!</p>
+</body>
+</html>
