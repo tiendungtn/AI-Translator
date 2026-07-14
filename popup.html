@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Bilingual Translator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-wrapper">
+        <img src="icons/icon-48.png" alt="Logo" class="logo">
+      </div>
+      <div class="title-wrapper">
+        <h1>AI Translator</h1>
+        <p class="subtitle">Bản dịch song ngữ thông minh</p>
+      </div>
+      <button id="btn-options" class="icon-btn" title="Cài đặt">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      <!-- Translate Button -->
+      <button id="btn-translate-page" class="btn-primary">
+        <span class="btn-text">Dịch trang web này</span>
+        <span class="pulse-ring"></span>
+      </button>
+      
+      <button id="btn-restore-page" class="btn-secondary" style="display: none;">
+        Khôi phục bản gốc
+      </button>
+
+      <!-- Settings Panel inside Popup -->
+      <div class="settings-card">
+        <div class="input-group">
+          <label for="select-target-lang">Ngôn ngữ đích</label>
+          <div class="custom-select-wrapper">
+            <select id="select-target-lang">
+              <option value="vi">Tiếng Việt (Vietnamese)</option>
+              <option value="en">Tiếng Anh (English)</option>
+              <option value="zh">Tiếng Trung (Chinese)</option>
+              <option value="ja">Tiếng Nhật (Japanese)</option>
+              <option value="ko">Tiếng Hàn (Korean)</option>
+              <option value="fr">Tiếng Pháp (French)</option>
+              <option value="de">Tiếng Đức (German)</option>
+              <option value="es">Tiếng Tây Ban Nha (Spanish)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="select-service">Công cụ dịch</label>
+          <div class="custom-select-wrapper">
+            <select id="select-service">
+              <option value="google">Google Translate (Miễn phí)</option>
+              <option value="gemini">Gemini AI (Yêu cầu API Key)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Warning for missing API key -->
+        <div id="api-warning" class="warning-alert" style="display: none;">
+          <span>Chưa cấu hình API Key cho Gemini.</span>
+          <a href="#" id="link-setup-key">Cấu hình ngay</a>
+        </div>
+      </div>
+
+      <!-- Status Indicator -->
+      <div id="status-container" class="status-indicator" style="display: none;">
+        <div class="spinner"></div>
+        <span id="status-text">Đang dịch...</span>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>AI Bilingual Translator v1.0.0</span>
+      <span class="status-dot online"></span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
